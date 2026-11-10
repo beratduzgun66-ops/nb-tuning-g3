@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08080c">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="x3fw+ Web Unlock &amp; Stock Compat Portal">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>x3fw+ · Unlock</title>
+<link rel="icon" type="image/png" href="/static/img/logo.png?v=1793513118">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/static/style.css?v=1793513118">
+<link rel="stylesheet" href="/static/glass.css?v=1793513118">
+<link rel="stylesheet" href="/static/plus.css?v=1793983673">
+<style>
+:root {
+    --ul-bg: #08080c;
+    --ul-panel-bg: rgba(18, 18, 26, 0.72);
+    --ul-panel-border: rgba(255, 255, 255, 0.075);
+    --ul-card-bg: rgba(22, 22, 32, 0.65);
+    --ul-card-border: rgba(255, 255, 255, 0.055);
+    --ul-accent: #6366f1;
+    --ul-accent-glow: rgba(99, 102, 241, 0.35);
+    --ul-tea-color: #4ade80;
+    --ul-tea-bg: rgba(34, 197, 94, 0.14);
+    --ul-tea-border: rgba(74, 222, 128, 0.45);
+    --ul-xtea-color: #f87171;
+    --ul-xtea-bg: rgba(239, 68, 68, 0.14);
+    --ul-xtea-border: rgba(248, 113, 113, 0.45);
+}
+
+body.ul-body {
+    background: radial-gradient(circle at 50% 0%, #16152b 0%, var(--ul-bg) 55%), #08080c;
+    color: #f3f4f6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    padding-bottom: 48px;
+    margin: 0;
+}
+
+.ul-page-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 16px 18px 40px;
+}
+
+/* Header */
+.ul-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(18, 18, 26, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+.ul-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ul-brand-mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+}
+
+.ul-brand-title {
+    font-size: 15px;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+}
+
+.ul-brand-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    border: 1px solid rgba(99, 102, 241, 0.35);
+}
+
+.ul-header-pills {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Stepper Navigation */
+.workflow-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 18px;
+    background: rgba(18, 18, 26, 0.78);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.7);
+}
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.step-indicator:hover {
+    color: #ffffff;
+}
+
+.step-badge {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11.5px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.06);
+    color: #9ca3af;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.step-badge .step-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.step-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    display: block;
+}
+
+.step-subtitle {
+    font-size: 10px;
+    color: #6b7280;
+    line-height: 1.1;
+    display: block;
+}
+
+.step-indicator.is-active {
+    color: #ffffff;
+    background: rgba(99, 102, 241, 0.16);
+    border-color: rgba(129, 140, 248, 0.35);
+}
+
+.step-indicator.is-active .step-badge {
+    background: #6366f1;
+    color: #ffffff;
+    border-color: #818cf8;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.step-indicator.is-completed {
+    color: #e5e7eb;
+}
+
+.step-indicator.is-completed .step-badge {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.5);
+}
+
+.step-connector {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    min-width: 12px;
+    transition: background 0.25s ease;
+}
+
+.step-connector.is-completed {
+    background: rgba(74, 222, 128, 0.45);
+}
+
+@media (max-width: 640px) {
+    .ul-page-wrap {
+        padding: 12px 10px 32px;
+    }
+    .workflow-stepper {
+        padding: 6px 8px;
+        gap: 3px;
+        border-radius: 14px;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .step-indicator {
+        padding: 5px 6px;
+        gap: 5px;
+        flex: 1 1 0;
+        min-width: 0;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    .step-badge {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        flex-shrink: 0;
+    }
+    .step-title {
+        font-size: 9.5px;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .step-subtitle {
+        display: none;
+    }
+    .step-connector {
+        min-width: 4px;
+        flex: 0 0 6px;
+    }
+}
+
+@media (max-width: 380px) {
+    .step-indicator {
+        padding: 4px 3px;
+        gap: 3px;
+    }
+    .step-badge {
+        width: 18px;
+        height: 18px;
+        font-size: 9px;
+    }
+    .step-title {
+        font-size: 8.5px;
+    }
+    .step-connector {
+        min-width: 2px;
+        flex: 0 0 3px;
+    }
+}
+
+/* Workflow Step Panels */
+.workflow-step {
+    background: var(--ul-panel-bg);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid var(--ul-panel-border);
+    border-radius: 20px;
+    padding: 22px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 14px 34px -14px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: border-color 0.25s ease, opacity 0.25s ease;
+}
+
+.workflow-step.is-pending {
+    opacity: 0.5;
+}
+
+.workflow-step.is-active {
+    opacity: 1;
+    border-color: rgba(129, 140, 248, 0.35);
+}
+
+.workflow-step.is-completed {
+    opacity: 1;
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.step-tag-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.step-tag {
+    font-size: 10.5px;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #9ca3af;
+}
+
+.workflow-step.is-active .step-tag {
+    background: rgba(99, 102, 241, 0.16);
+    border-color: rgba(129, 140, 248, 0.4);
+    color: #c7d2fe;
+}
+
+.workflow-step.is-completed .step-tag {
+    background: rgba(34, 197, 94, 0.16);
+    border-color: rgba(74, 222, 128, 0.4);
+    color: #4ade80;
+}
+
+.step-tag-state {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.workflow-step.is-active .step-tag-state {
+    color: #a5b4fc;
+}
+
+.workflow-step.is-completed .step-tag-state {
+    color: #4ade80;
+}
+
+/* Headings */
+.step-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.step-heading-group {
+    flex: 1;
+}
+
+.step-main-title {
+    font-size: 18px;
+    font-weight: 750;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin: 0 0 3px;
+}
+
+.step-main-desc {
+    font-size: 12.5px;
+    color: #9ca3af;
+    margin: 0;
+}
+
+/* Buttons */
+.ul-btn-white {
+    background: #ffffff;
+    color: #0a0a0f;
+    border: none;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 650;
+    padding: 8px 22px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
+}
+
+.ul-btn-white:hover:not(:disabled) {
+    background: #f3f4f6;
+    transform: translateY(-1px);
+}
+
+.ul-btn-white:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.ul-btn-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 8px 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.15s ease;
+}
+
+.ul-btn-pill:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ul-btn-pill:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.ul-btn-primary-pill {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    border: 1px solid rgba(129, 140, 248, 0.4);
+    color: #ffffff;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 650;
+    padding: 8px 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    transition: all 0.15s ease;
+}
+
+.ul-btn-primary-pill:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.5);
+}
+
+.ul-btn-primary-pill:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Status / Identity bar */
+.ul-identity-box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 14px;
+}
+
+/* Telemetry Grid in Step 1 */
+.telemetry-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .telemetry-grid-2col {
+        grid-template-columns: 1fr;
+    }
+}
+
+.telemetry-tile {
+    background: rgba(22, 22, 32, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 12px;
+    padding: 11px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.telemetry-label {
+    font-size: 10.5px;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+}
+
+.telemetry-val {
+    font-size: 13.5px;
+    font-weight: 650;
+    color: #ffffff;
+}
+
+.telemetry-val.ul-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 12.5px;
+}
+
+/* Mode Badges */
+.badge-mode {
+    font-size: 10.5px;
+    font-weight: 750;
+    padding: 2px 8px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+}
+
+.badge-mode--none {
+    background: rgba(255, 255, 255, 0.06);
+    color: #9ca3af;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge-mode--tea {
+    background: var(--ul-tea-bg);
+    color: var(--ul-tea-color);
+    border: 1px solid var(--ul-tea-border);
+}
+
+.badge-mode--xtea {
+    background: var(--ul-xtea-bg);
+    color: var(--ul-xtea-color);
+    border: 1px solid var(--ul-xtea-border);
+}
+
+/* Cards Container in Step 2 */
+.keys-duo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+@media (max-width: 680px) {
+    .keys-duo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.controller-box {
+    background: rgba(22, 22, 32, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.controller-box-head {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.controller-box-title {
+    font-size: 13.5px;
+    font-weight: 750;
+    color: #ffffff;
+    margin: 0;
+}
+
+.controller-box-sub {
+    font-size: 11px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.keys-2x2-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.key-field {
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.045);
+    border-radius: 10px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow: hidden;
+}
+
+.key-field-lbl {
+    font-size: 9.5px;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6b7280;
+}
+
+.key-field-val {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #e5e7eb;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Wide Button Box in Step 2 */
+.download-box {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.ul-btn-wide {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 650;
+    padding: 11px 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.15s ease;
+}
+
+.ul-btn-wide:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ul-btn-wide:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.download-subtext {
+    font-size: 11px;
+    color: #6b7280;
+    margin: 0;
+    text-align: center;
+}
+
+/* Step 3: Compat Flash */
+.compat-box {
+    background: rgba(22, 22, 32, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.compat-box-head {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.compat-box-title {
+    font-size: 13.5px;
+    font-weight: 750;
+    color: #ffffff;
+    margin: 0;
+}
+
+.compat-box-sub {
+    font-size: 11px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.compat-build-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .compat-build-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.compat-tile {
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.045);
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.compat-tile-lbl {
+    font-size: 10px;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6b7280;
+}
+
+.compat-tile-val {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 12.5px;
+    font-weight: 650;
+    color: #ffffff;
+}
+
+.compat-actions-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .compat-actions-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ul-btn-action {
+    background: rgba(99, 102, 241, 0.16);
+    border: 1px solid rgba(129, 140, 248, 0.35);
+    color: #c7d2fe;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 650;
+    padding: 10px 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.15s ease;
+}
+
+.ul-btn-action:hover:not(:disabled) {
+    background: rgba(99, 102, 241, 0.28);
+    color: #ffffff;
+    border-color: rgba(129, 140, 248, 0.55);
+}
+
+.ul-btn-action:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #9ca3af;
+}
+
+/* Flash Progress Box */
+.progress-box {
+    margin-top: 14px;
+    background: rgba(14, 14, 22, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.progress-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.progress-title-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.progress-pct-badge {
+    font-size: 12px;
+    font-weight: 750;
+    font-family: 'JetBrains Mono', monospace;
+    color: #818cf8;
+}
+
+.progress-bar-wrap {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #6366f1, #818cf8);
+    transition: width 0.15s ease;
+}
+
+.progress-subtext-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.copy-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #1e1b4b;
+    border: 1px solid #818cf8;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateY(8px);
+}
+
+.copy-toast.is-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Credits Footer */
+.ul-footer {
+    margin-top: 24px;
+    padding: 14px 18px;
+    background: rgba(18, 18, 26, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.ul-footer-credits {
+    margin: 0;
+    font-size: 11.5px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.ul-footer-link {
+    color: #a5b4fc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease;
+}
+
+.ul-footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+</style>
+</head>
+<body class="ul-body">
+<div class="ul-page-wrap">
+
+    <!-- Top Navigation Bar -->
+    <header class="ul-top-bar">
+        <div class="ul-brand">
+            <img class="ul-brand-mark" src="/static/img/logo.png?v=1793513118" alt="" width="26" height="26">
+            <span class="ul-brand-title">x3fw+</span>
+            <span class="ul-brand-tag">UNLOCK</span>
+        </div>
+        <div class="ul-header-pills">
+            <span id="conn-pill" class="plus-pill">Off</span>
+        </div>
+    </header>
+
+    <!-- 3-Step Stepper Navigation -->
+    <nav class="workflow-stepper" aria-label="Workflow-Fortschritt">
+        <div class="step-indicator is-active" id="step-ind-1">
+            <span class="step-badge">
+                <span class="step-dot"></span>
+            </span>
+            <span class="step-label">
+                <span class="step-title">VERBINDEN</span>
+                <span class="step-subtitle">BLE &amp; Status</span>
+            </span>
+        </div>
+        <div class="step-connector" id="step-conn-1"></div>
+        <div class="step-indicator" id="step-ind-2">
+            <span class="step-badge">2</span>
+            <span class="step-label">
+                <span class="step-title">KEYS AUSLESEN</span>
+                <span class="step-subtitle">Sichern als JSON</span>
+            </span>
+        </div>
+        <div class="step-connector" id="step-conn-2"></div>
+        <div class="step-indicator" id="step-ind-3">
+            <span class="step-badge">3</span>
+            <span class="step-label">
+                <span class="step-title">COMPAT FLASH</span>
+                <span class="step-subtitle">Stock Firmware</span>
+            </span>
+        </div>
+    </nav>
+
+    <!-- SCHRITT 1: VERBINDEN -->
+    <section class="workflow-step is-active" id="panel-live" data-step="1">
+        <div class="step-tag-bar">
+            <span class="step-tag">SCHRITT 1</span>
+            <span class="step-tag-state" id="state-tag-1">Aktiv</span>
+        </div>
+
+        <div class="step-head">
+            <div class="step-heading-group">
+                <h2 class="step-main-title">Roller verbinden</h2>
+                <p id="status" class="step-main-desc">Bereit zum Verbinden (Web Bluetooth)</p>
+            </div>
+            <div class="step-actions">
+                <button type="button" class="ul-btn-white" id="connect">Connect</button>
+            </div>
+        </div>
+
+        <div id="identity" class="ul-identity-box">Not connected</div>
+
+        <!-- Telemetrie Grid -->
+        <div class="telemetry-grid-2col">
+            <div class="telemetry-tile">
+                <span class="telemetry-label">MODELL</span>
+                <strong class="telemetry-val" id="stat-model">—</strong>
+            </div>
+            <div class="telemetry-tile">
+                <span class="telemetry-label">VCU SERIAL</span>
+                <strong class="telemetry-val ul-mono" id="stat-sn">—</strong>
+            </div>
+            <div class="telemetry-tile">
+                <span class="telemetry-label">MCU SERIAL</span>
+                <strong class="telemetry-val ul-mono" id="stat-mcu-sn">—</strong>
+            </div>
+            <div class="telemetry-tile">
+                <span class="telemetry-label">AKKU</span>
+                <strong class="telemetry-val" id="stat-soc">—</strong>
+            </div>
+            <div class="telemetry-tile">
+                <span class="telemetry-label">VCU VERSION</span>
+                <strong class="telemetry-val" id="stat-vcu-ver">—</strong>
+            </div>
+            <div class="telemetry-tile">
+                <span class="telemetry-label">VCU MODUS</span>
+                <div><span id="stat-vcu-mode"><span class="badge-mode badge-mode--none">—</span></span></div>
+            </div>
+            <div class="telemetry-tile">
+                <span class="telemetry-label">MCU VERSION</span>
+                <strong class="telemetry-val" id="stat-mcu-ver">—</strong>
+            </div>
+            <div class="telemetry-tile">
+                <span class="telemetry-label">MCU MODUS</span>
+                <div><span id="stat-mcu-mode"><span class="badge-mode badge-mode--none">—</span></span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHRITT 2: KEYS AUSLESEN & SICHERN -->
+    <section class="workflow-step is-pending" id="panel-keys" data-step="2">
+        <div class="step-tag-bar">
+            <span class="step-tag">SCHRITT 2</span>
+            <span class="step-tag-state" id="state-tag-2">Warten auf Verbindung</span>
+        </div>
+
+        <div class="step-head">
+            <div class="step-heading-group">
+                <h2 class="step-main-title">Keys auslesen &amp; sichern</h2>
+            </div>
+            <div class="step-actions">
+                <button type="button" class="ul-btn-pill" id="btn-extract-keys" disabled>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m11 12 9-9M17 5l3 3M15 7l2 2"/></svg>
+                    <span>Keys auslesen</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 2 Controller Cards -->
+        <div class="keys-duo-grid">
+            <!-- VCU Card -->
+            <div class="controller-box">
+                <div class="controller-box-head">
+                    <h3 class="controller-box-title">VCU Schlüssel &amp; Seeds</h3>
+                    <span class="controller-box-sub" id="hint-vcu-mode">Dashboard / VCU Controller</span>
+                </div>
+                <div class="keys-2x2-grid">
+                    <div class="key-field">
+                        <span class="key-field-lbl">MARKER</span>
+                        <span class="key-field-val" id="key-marker">—</span>
+                    </div>
+                    <div class="key-field">
+                        <span class="key-field-lbl">TEA KEY 1</span>
+                        <span class="key-field-val" id="key-tea1">—</span>
+                    </div>
+                    <div class="key-field">
+                        <span class="key-field-lbl">RAND SEED</span>
+                        <span class="key-field-val" id="key-rand">—</span>
+                    </div>
+                    <div class="key-field">
+                        <span class="key-field-lbl">XTEA KEY 2</span>
+                        <span class="key-field-val" id="key-xtea2">—</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MCU Card -->
+            <div class="controller-box">
+                <div class="controller-box-head">
+                    <h3 class="controller-box-title">MCU Schlüssel &amp; Seeds</h3>
+                    <span class="controller-box-sub" id="hint-mcu-mode">Motor Controller (ESC)</span>
+                </div>
+                <div class="keys-2x2-grid">
+                    <div class="key-field">
+                        <span class="key-field-lbl">MARKER</span>
+                        <span class="key-field-val" id="key-mcu-marker">—</span>
+                    </div>
+                    <div class="key-field">
+                        <span class="key-field-lbl">TEA KEY 1</span>
+                        <span class="key-field-val" id="key-mcu-tea1">—</span>
+                    </div>
+                    <div class="key-field">
+                        <span class="key-field-lbl">RAND SEED</span>
+                        <span class="key-field-val" id="key-mcu-rand">—</span>
+                    </div>
+                    <div class="key-field">
+                        <span class="key-field-lbl">XTEA KEY 2</span>
+                        <span class="key-field-val" id="key-mcu-xtea2">—</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download JSON Button -->
+        <div class="download-box">
+            <button type="button" class="ul-btn-wide" id="btn-download-json" disabled>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                <span>Keys als JSON herunterladen</span>
+            </button>
+            <p class="download-subtext">
+                Exportiert die Schlüssel als keys_&lt;serial&gt;.json strukturiert in keys_vcu und keys_mcu.
+            </p>
+        </div>
+    </section>
+
+    <!-- SCHRITT 3: STOCK COMPAT FLASH -->
+    <section class="workflow-step is-pending" id="panel-flash" data-step="3">
+        <div class="step-tag-bar">
+            <span class="step-tag">SCHRITT 3</span>
+            <span class="step-tag-state" id="state-tag-3">Gesperrt</span>
+        </div>
+
+        <div class="step-head">
+            <div class="step-heading-group">
+                <h2 class="step-main-title">Stock Compat Flash</h2>
+            </div>
+        </div>
+
+        <!-- Sub-card: Verfügbare Stock COMPAT Versionen -->
+        <div class="compat-box">
+            <div class="compat-box-head">
+                <h3 class="compat-box-title">Verfügbare Stock COMPAT Versionen</h3>
+                <span class="compat-box-sub">Automatisch auf dein Modell abgestimmt</span>
+            </div>
+            <div class="compat-build-row">
+                <div class="compat-tile">
+                    <span class="compat-tile-lbl">MCU COMPAT BUILD</span>
+                    <strong class="compat-tile-val" id="lbl-compat-mcu">—</strong>
+                </div>
+                <div class="compat-tile">
+                    <span class="compat-tile-lbl">VCU COMPAT BUILD</span>
+                    <strong class="compat-tile-val" id="lbl-compat-vcu">—</strong>
+                </div>
+            </div>
+            <div class="compat-actions-row">
+                <button type="button" class="ul-btn-action" id="btn-flash-mcu-compat" disabled>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <span>Flash MCU Compat</span>
+                </button>
+                <button type="button" class="ul-btn-action" id="btn-flash-vcu-compat" disabled>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <span>Flash VCU Compat</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Live Flash Progress Component -->
+        <div id="flash-progress-box" hidden class="progress-box">
+            <div class="progress-info-row">
+                <span class="progress-title-text" id="flash-progress-title">Flashe Firmware...</span>
+                <span class="progress-pct-badge" id="flash-progress-pct">0%</span>
+            </div>
+            <div class="progress-bar-wrap">
+                <div id="flash-progress-bar" class="progress-bar"></div>
+            </div>
+            <div class="progress-subtext-row">
+                <span id="flash-progress-blocks">Block 0 / 0</span>
+                <span style="color: #fbbf24; display: inline-flex; align-items: center; gap: 4px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span>Roller nicht ausschalten &amp; Bluetooth aktiv lassen!</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credits Footer -->
+    <footer class="ul-footer">
+        <p class="ul-footer-credits">
+            This project could never be fully done without the help of <a href="https://n-sakcfw.app/" target="_blank" rel="noopener noreferrer" class="ul-footer-link">N-SAK</a> — huge shoutout! Join their <a href="https://discord.gg/3QxwCTWh46" target="_blank" rel="noopener noreferrer" class="ul-footer-link">Discord Community</a>.
+        </p>
+    </footer>
+
+</div>
+
+<!-- Copy Feedback Toast -->
+<div id="copy-toast" class="copy-toast">In Zwischenablage kopiert!</div>
+
+<script src="/static/js/unlock_v2.js?v=1794161215"></script>
+</body>
+</html>
